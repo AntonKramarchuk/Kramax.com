@@ -11,12 +11,12 @@ function Footer() {
                 background: "#2D404C", color: 'text.secondary'
             }}>
                 <Container maxWidth="lg">
-                  <Box component="div" sx={{height:'100%',display: 'flex', alignItems:'center',justifyContent: 'space-between', padding:'50px 0'}}>
-                      <Box component="div" sx={{ display:'flex', flexDirection: 'column'}}>
+                  <Box component="div" sx={{height:'100%',display: 'flex', alignItems:'center',justifyContent: {xs:'center',md:'space-between'}, padding:'50px 0'}}>
+                      <Box component="div" sx={{ display:{xs:'none',md:'flex'}, flexDirection: 'column'}}>
                           <LogoFooter/>
                           <NavBarFooter/>
                       </Box>
-                      <Box component="div">
+                      <Box component="div" >
                           <ContactsFooter/>
                       </Box>
 

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function NavBarElement({title, list}) {
 
     return (
-        <Box component='div' sx={{display: 'flex', flexDirection: 'column',paddingRight:'50px'}}>
+        <Box component='div' sx={{display: 'flex', flexDirection: 'column',paddingRight:'70px'}}>
             <Typography variant="body1" component='span' sx={{color:'#FFF', fontSize: '15px', '&:hover': {
                     color:'#DFB48B',
                 }}}>

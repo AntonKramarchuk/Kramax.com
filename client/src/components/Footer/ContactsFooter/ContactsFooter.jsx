@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Link as MaterialUILink, List, ListItemIcon, Typography} from "@mui/material";
+import {Box, Link as MaterialUILink, List, ListItemIcon, Typography, useMediaQuery} from "@mui/material";
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -8,11 +8,15 @@ import {format} from 'date-fns'
 import {Link as RouterLink} from 'react-router-dom'
 import {styled} from '@mui/material/styles';
 
-const StyledTypography = styled(Typography)(() => ({
+const StyledTypography = styled(Typography)(({theme}) => ({
     color: '#C7D9E6',
     fontSize: '14px',
     fontWeight: '200',
     paddingBottom: '15px',
+    textAlign: 'center',
+    [theme.breakpoints.up('md')]: {
+        textAlign: 'left',
+    },
 }));
 const HoverStyledTypography = styled(StyledTypography)(() => ({
     '&:hover': {
@@ -21,11 +25,13 @@ const HoverStyledTypography = styled(StyledTypography)(() => ({
 }));
 
 function ContactsFooter() {
+    const isDesktop = useMediaQuery((theme) => theme.breakpoints.up('md'));
     return (
-        <Box component='div' sx={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
+        <Box component='div'
+             sx={{display: 'flex', flexDirection: 'column', alignItems: {xs: 'center', md: 'flex-start'}}}>
             <Typography variant="body1" component='span' sx={{
                 color: '#FFF',
-                fontSize: '20px',
+                fontSize: {xs: '25px', md: '20px'},
                 fontWeight: '600',
                 lineHeight: "24px",
                 "&:hover": {textDecoration: 'underline'}
@@ -35,9 +41,10 @@ function ContactsFooter() {
             </Typography>
             <Typography variant="body1" component='span' m={1} sx={{
                 color: '#DFB48B',
-                fontSize: '14px',
+                fontSize: {xs: '18px', md: '14px'},
                 fontWeight: '400',
                 lineHeight: "17px",
+                paddingTop: '5px',
                 "&:hover": {textDecoration: 'underline'}
             }}><MaterialUILink href="mailto:someNew@gmail.com" underline="none"
                                color="inherit">someNew@gmail.com</MaterialUILink>
@@ -54,9 +61,21 @@ function ContactsFooter() {
                                     rel="noopener noreferrer"><YouTubeIcon/></MaterialUILink>
                 </ListItemIcon>
             </List>
-            <Box component='div'>
+            <Box component='div' sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: {
+                    xs: 'center',
+                    md: 'flex-start'
+                },
+                justifyContent: {
+                    xs: 'center',
+                    md: 'flex-start'
+                }
+            }}>
                 <StyledTypography component='p'>
-                    © RemontProfi – будівельно-ремонтна <br/>компанія у Києві, 2008 - {format(new Date(), 'yyyy')}
+                    © RemontProfi – будівельно-ремонтна {isDesktop && <br/>}компанія у Києві, 2008
+                    - {format(new Date(), 'yyyy')}
                 </StyledTypography>
                 <HoverStyledTypography component='p'>
                     <MaterialUILink href='#' color="inherit" underline="none" target="_blank" rel="noopener noreferrer">Розробка
