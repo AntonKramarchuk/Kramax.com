@@ -9,7 +9,7 @@ import {Link as RouterLink} from 'react-router-dom'
 import {styled} from '@mui/material/styles';
 
 const StyledTypography = styled(Typography)(() => ({
-    color: '#FFF',
+    color: '#C7D9E6',
     fontSize: '14px',
     fontWeight: '200',
     paddingBottom: '15px',
