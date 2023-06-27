@@ -1,6 +1,12 @@
 import React from 'react';
 import {Box, List, ListItemText, Typography} from "@mui/material";
+import {Link} from 'react-router-dom'
 import PropTypes from 'prop-types';
+const styles = {
+    link: {
+        textDecoration: 'none',
+    },
+};
 function NavBarElement({title, list}) {
 
     return (
@@ -13,9 +19,10 @@ function NavBarElement({title, list}) {
             <List >
                 {list.map((item, index) => {
                     return(
-                        <ListItemText disableTypography={true}  sx={{paddingBottom:'10px', color:'#C7D9E6',fontFamily:'Montserrat,sans-serif',fontSize:'14px',lineHeight: "17px", fontWeight: '200','&:hover':{color:'#DFB48B'}}} key={index}>
-                            {item}
-                        </ListItemText>
+                        <Link key={index} to='/' style={styles.link}>
+                            <ListItemText primary={item} disableTypography={true}  sx={{paddingBottom:'10px', color:'#C7D9E6',fontFamily:'Montserrat,sans-serif',fontSize:'14px',lineHeight: "17px", fontWeight: '200','&:hover':{color:'#DFB48B'}}} />
+                        </Link>
+
                     )
                 })}
 
