@@ -11,4 +11,7 @@
   --robotoMedium: "RobotoMedium", sans-serif;
   --robotoLight: "RobotoLight", sans-serif;
 }
+.App{
+  min-width: 320px;
+}
 
