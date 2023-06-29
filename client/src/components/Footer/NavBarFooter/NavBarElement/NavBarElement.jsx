@@ -1,7 +1,7 @@
 import React from 'react';
 import {Box, List, ListItemText, Typography} from "@mui/material";
 import {Link} from 'react-router-dom'
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 const styles = {
     link: {
         textDecoration: 'none',
