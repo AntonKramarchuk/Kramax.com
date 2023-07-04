@@ -7,6 +7,7 @@ import {ChevronLeft, ChevronRight} from "@mui/icons-material";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAsyncPromotions} from "../../store/slices/promotionsSlace";
 import Error from '../Error/Error'
+import PromotionsCard from "../PromotionsCard/PromotionsCard";
 const responsive = {
     superLargeDesktop: {
         // the naming can be any, depends on you.
@@ -107,7 +108,7 @@ function PromotionsCarousel() {
             return <h2>Loading....</h2>;
         case 'loaded':
             return (
-                <>
+                <Box sx={{paddingBottom:'15px'}}>
                     <Container>
                         <Typography variant='h2' color='#5c6366' sx={{fontSize: {xs:'25px',sm:'30px',md:'50px'},fontWeight: '200', lineHeight: "1.2", marginBottom: '45px', letterSpacing:'3px'}}>Акції</Typography>
                         <Carousel
@@ -121,16 +122,13 @@ function PromotionsCarousel() {
 
                         >
                             {promotions.products && promotions.products.map(item=>{
-                                // if(item.carousel === 'true'){
-                                    return <Box key={item._id} component='div' >
-                                        <img src={item.imageUrl} alt="1"/> </Box>
-                                // }
+                                return <PromotionsCard key={item._id}  {...item}/>
 
                             })}
 
                         </Carousel>
                     </Container>
-                </>
+                </Box>
             );
         default:
             return <Error error={status}/>
