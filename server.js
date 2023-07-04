@@ -23,6 +23,7 @@ const comments = require('./routes/comments');
 const shippingMethods = require('./routes/shippingMethods');
 const paymentMethods = require('./routes/paymentMethods');
 const partners = require('./routes/partners');
+const promotions = require('./routes/promotions')
 const cors = require('cors')
 // const mainRoute = require('./routes/index');
 
@@ -66,6 +67,7 @@ app.use('/api/comments', comments);
 app.use('/api/shipping-methods', shippingMethods);
 app.use('/api/payment-methods', paymentMethods);
 app.use('/api/partners', partners);
+app.use('/api/promotions', promotions);
 // app.use('/', mainRoute);
 
 // Server static assets if in production
