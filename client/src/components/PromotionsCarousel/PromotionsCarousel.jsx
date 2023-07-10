@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {Box, Container,  Typography, useMediaQuery} from "@mui/material";
+import {Box, Container, Typography, useMediaQuery} from "@mui/material";
 import Carousel from "react-multi-carousel";
 import 'react-multi-carousel/lib/styles.css';
 import PropTypes from 'prop-types';
@@ -31,56 +31,62 @@ const responsive = {
 };
 const ButtonGroup = ({next, previous, ...rest}) => {
     const {carouselState: {currentSlide}} = rest;
-    const isDesktop = useMediaQuery((theme) => theme.breakpoints.down('md'));
+    const isDesktop = useMediaQuery((theme) => theme.breakpoints.down('xl'));
     return (
         <Box
             component='div'
             sx={{
-                // position: isDesktop ? 'absolute': 'relative',
-                // bottom:isDesktop ? '10%' : 0,
-                // left: isDesktop ?'5%': 0,
-                // transform: isMobile ? 'translateX(-50%)' : 'none',
+                position: isDesktop ? 'none': 'absolute',
+                bottom:isDesktop ? '10%' : 0,
+                left: isDesktop ?'5%': 0,
+                
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'space-between',
+                justifyContent: isDesktop ?'space-evenly': 'space-between',
                 padding: '10px 16px',
-                width: isDesktop ? '90%' : '100%',
+                width:  '95%',
+                margin: 0
             }}
         >
             <Box component='div' sx={{
                 height: '70px',
-                width:'105px',
+                width: '105px',
                 display: 'flex',
                 cursor: 'pointer',
                 position: 'relative',
                 opacity: currentSlide === 0 ? 0.5 : 1,
                 pointerEvents: currentSlide === 0 ? 'none' : 'auto'
             }} onClick={() => previous()}>
-                <Box component='div' sx={{background: '#92C2ED', width: '70%', height: '100%'}}></Box>
-                    <WestOutlinedIcon  sx={{fontSize:'55px', position: 'absolute',
-                        top: '10%',
-                        left: '40%',
-                        fill:'#000'
-                   }}/>
+                <Box component='div'
+                     sx={{background: currentSlide === 0 ? '#92C2ED' : '#DFB48B', width: '70%', height: '100%'}}></Box>
+                <WestOutlinedIcon sx={{
+                    fontSize: '55px', position: 'absolute',
+                    top: '10%',
+                    left: '40%',
+                    fill: '#000'
+                }}/>
             
             </Box>
-            <Box component='div' sx={{  height: '70px',
-                width:'105px',
+            <Box component='div' sx={{
+                height: '70px',
+                width: '105px',
                 display: 'flex',
-                flexDirection:'row-revers',
+                justifyContent: 'flex-end',
                 cursor: 'pointer',
                 position: 'relative',
                 transition: 'opacity 0.3s',
             }} onClick={() => next()}>
-                <Box component='div' sx={{background: '#DFB48B', width: '70%', height: '100%'}}>
+                <Box component='div'
+                     sx={{background: currentSlide === 0 ? '#DFB48B' : '#92C2ED', width: '70%', height: '100%'}}>
                 </Box>
-                <WestOutlinedIcon  sx={{fontSize:'55px', position: 'absolute',
+                <WestOutlinedIcon sx={{
+                    fontSize: '55px', position: 'absolute',
                     top: '10%',
                     right: '40%',
-                    fill:'#000'
+                    fill: '#000',
+                    transform: 'rotate(180deg)'
                 }}/>
             </Box>
-            
         </Box>
     );
 };
@@ -123,13 +129,10 @@ function PromotionsCarousel() {
                             renderButtonGroupOutside={true}
                             customButtonGroup={<ButtonGroup/>}
                             containerClass="carousel-container"
-                        
                         >
                             {promotions.products && promotions.products.map(item => {
                                 return <PromotionsCard key={item._id}  {...item}/>
-                                
                             })}
-                        
                         </Carousel>
                     </Container>
                 </Box>
