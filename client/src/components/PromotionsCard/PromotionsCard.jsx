@@ -13,7 +13,7 @@ function PromotionsCard({imageUrl, title, description, customId}) {
     const backgroundColor = customId % 2 === 0 ? '#DFB48B' : '#92C2ED';
     return (
         <Card>
-            <CardMedia sx={{width: '350px', height: '490px', position: 'relative'}}
+            <CardMedia sx={{width:{xs:'300px', sm:'350px'},  height:{xs:'450px', sm:'490px'} , position: 'relative'}}
                        image={imageUrl}
                        alt="image">
                 <CardContent sx={{
