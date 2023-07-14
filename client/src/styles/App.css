@@ -1,17 +1,20 @@
 /* ----------------------colors-------------- */
 :root {
-  --black: #000000;
-  --white: #ffffff;
-  --red: #ff0000;
+    --black: #000000;
+    --white: #ffffff;
+    --red: #ff0000;
 }
+
 /* ------------------fonts---------- */
 :root {
-  --robotoBold: "RobotoBold", sans-serif;
-  --robotoRegular: "RobotoRegular", sans-serif;
-  --robotoMedium: "RobotoMedium", sans-serif;
-  --robotoLight: "RobotoLight", sans-serif;
+    --robotoBold: "RobotoBold", sans-serif;
+    --robotoRegular: "RobotoRegular", sans-serif;
+    --robotoMedium: "RobotoMedium", sans-serif;
+    --robotoLight: "RobotoLight", sans-serif;
 }
-.App{
-  min-width: 320px;
+
+.App {
+    min-width: 320px;
+    max-width: 2000px;
 }
 
