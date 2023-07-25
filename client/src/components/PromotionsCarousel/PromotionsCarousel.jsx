@@ -113,8 +113,8 @@ function PromotionsCarousel() {
         case 'loaded':
             return (
                 <Box sx={{paddingBottom: '15px'}}>
-                    <Container>
-                        <Typography variant='h2' color='#5c6366' sx={{
+                    <Container maxWidth="lg">
+                        <Typography variant='h2' color='#172127' sx={{
                             fontSize: {xs: '25px', sm: '30px', md: '50px'},
                             fontWeight: '200',
                             lineHeight: "1.2",

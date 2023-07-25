@@ -62,8 +62,8 @@ function Advantages() {
         <Container maxWidth="lg">
             <Box component="div"
                  sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
-                <Typography variant='h3' color='#5c6366'
-                            sx={{fontSize: {xs:'25px',sm:'30px',md:'40px'}, fontWeight: '200', lineHeight: "1.2", marginBottom: '20px', letterSpacing:'3px'}}>Переваги
+                <Typography variant='h3' color='#172127'
+                            sx={{fontSize: {xs:'25px',sm:'30px',md:'40px'}, fontWeight: '200', lineHeight: "1.2", marginBottom: '20px', letterSpacing:'.2rem'}}>Переваги
                     роботи з нами</Typography>
                 <List sx={{display: 'grid',gridTemplateColumns: {xs:'repeat(2, 1fr)', md:'repeat(6, 1fr)'} }}>
                     {data.map((item) => {
