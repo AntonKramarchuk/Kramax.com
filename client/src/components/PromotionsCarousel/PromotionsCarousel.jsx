@@ -3,7 +3,6 @@ import {Box, Container, Typography, useMediaQuery} from "@mui/material";
 import Carousel from "react-multi-carousel";
 import 'react-multi-carousel/lib/styles.css';
 import PropTypes from 'prop-types';
-// import {/*ChevronLeft,*/ ChevronRight} from "@mui/icons-material";
 import WestOutlinedIcon from '@mui/icons-material/WestOutlined';
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAsyncPromotions} from "../../store/slices/promotionsSlace";
@@ -31,20 +30,19 @@ const responsive = {
 };
 const ButtonGroup = ({next, previous, ...rest}) => {
     const {carouselState: {currentSlide}} = rest;
-    const isDesktop = useMediaQuery((theme) => theme.breakpoints.down('xl'));
+    const isDesktop = useMediaQuery((theme) => theme.breakpoints.down('lg'));
     return (
         <Box
             component='div'
             sx={{
-                position: isDesktop ? 'none': 'absolute',
-                bottom:isDesktop ? '10%' : 0,
-                left: isDesktop ?'5%': 0,
-                
+                position: isDesktop ? 'none' : 'absolute',
+                bottom: isDesktop ?  0: '40%',
+                left: isDesktop ?  '5%': 0,
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: isDesktop ?'space-evenly': 'space-between',
+                justifyContent: isDesktop ? 'space-evenly' :'space-between' ,
                 padding: '10px 16px',
-                width:  '95%',
+                width: '95%',
                 margin: 0
             }}
         >
@@ -112,14 +110,15 @@ function PromotionsCarousel() {
             return <h2>Loading....</h2>;
         case 'loaded':
             return (
-                <Box sx={{paddingBottom: '15px'}}>
+                <Box sx={{paddingBottom: '15px',position:'relative'}}>
                     <Container maxWidth="lg">
                         <Typography variant='h2' color='#172127' sx={{
                             fontSize: {xs: '25px', sm: '30px', md: '50px'},
                             fontWeight: '200',
                             lineHeight: "1.2",
                             marginBottom: '45px',
-                            letterSpacing: '3px'
+                            letterSpacing: '3px',
+                            
                         }}>Акції</Typography>
                         <Carousel
                             responsive={responsive}
