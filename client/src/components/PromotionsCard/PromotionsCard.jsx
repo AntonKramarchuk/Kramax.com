@@ -42,7 +42,7 @@ function PromotionsCard({imageUrl, title, description, customId}) {
 PromotionsCard.propTypes = {
     imageUrl: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
+    description: PropTypes.string,
     customId: PropTypes.string.isRequired
 };
 export default PromotionsCard;

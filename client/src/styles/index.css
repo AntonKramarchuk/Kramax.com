@@ -24,6 +24,9 @@ time, mark, audio, video {
 
 body {
     line-height: 1;
+    min-width: 320px;
+    max-width: 1800px;
+    margin: 0 auto;
 }
 
 article, aside, details, figcaption, figure,
