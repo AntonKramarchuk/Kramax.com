@@ -8,12 +8,12 @@ import BalconyPrice from "../../components/BalconyPrice/BalconyPrice";
 
 function Home() {
     return (
-        <div>
+        <>
             <BalconyPrice/>
             <Advantages/>
             <VideoAbout/>
             <PromotionsCarousel/>
-           </div>
+        </>
     );
 }
 

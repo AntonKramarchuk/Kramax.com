@@ -103,7 +103,7 @@ function VideoAbout() {
                                 src="/image/video_about/video-about.jpg"
                                 variant="square"
                                 sx={{width:{xs:"100%"}, height:{xs:"100%",lg:"293px"}, filter: ' brightness(50%)'}}
-                            ></Avatar>
+                            />
                             
                             
                             <Box component='span' sx={{
