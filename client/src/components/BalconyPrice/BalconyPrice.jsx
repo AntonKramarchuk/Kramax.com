@@ -1,7 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Box, Container, Typography} from "@mui/material";
 import BalconyForm from './BalconyForm'
 const BalconyPrice = () => {
+    const [test, setTest] = useState(false)
+    const testHandler = ()=>{
+        setTest(!test)
+        console.log(123)
+    }
     return (
         <Container maxWidth="lg">
             <Box component="div" sx={{
@@ -46,14 +51,14 @@ const BalconyPrice = () => {
                 <Box component="div"
                      sx={{
                          position: {xs: 'static', sm: 'absolute'},
-                         bottom:{sm:'13%',md:'11%'},
+                         bottom:{sm:'90px'},
                          right:'10%',
-                         backgroundColor: '#DFB48B',
+                         backgroundColor: test ?  '#fff' : '#DFB48B',
                          width: {xs: '100%', sm: '47%'},
                          height: {xs: '100%', sm: '65%', md:'70%'},
                          
                      }}>
-                    <BalconyForm/>
+                    <BalconyForm test={test} setTest={setTest} testHandler={testHandler}/>
                 </Box>
             </Box>
         
