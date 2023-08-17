@@ -5,10 +5,9 @@ const BalconyPrice = () => {
     const [test, setTest] = useState(false)
     const testHandler = ()=>{
         setTest(!test)
-        console.log(123)
     }
     return (
-        <Container maxWidth="lg">
+        <Container maxWidth='lg'>
             <Box component="div" sx={{
                 width: '100%',
                 mb: '30px',
