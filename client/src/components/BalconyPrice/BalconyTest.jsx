@@ -1,6 +1,6 @@
 import React from 'react';
-import {Box, Typography, TextField} from "@mui/material";
-
+import {Box, Typography, TextField,Button } from "@mui/material";
+import EastIcon from '@mui/icons-material/East';
 
 const BalconyTest = () => {
     return (
@@ -26,9 +26,25 @@ const BalconyTest = () => {
             }}>
                 Всередині балкона потрібно виміряти довжину та ширину та помножити значення між собою. Ви отримаєте площу балкона у квадратних метрах
             </Typography>
-            <Box component="form" sx={{display:'flex',alignItems:'center', '& > :not(style)': { m: 1, width: '25ch'  }, }}>
-                <TextField variant="outlined"  size="small" focused  color='primary'/>
+            <Box component="form" sx={{display:'flex',alignItems:'center', '& > :not(style)': { mt: 2}, }}>
+                <TextField variant="outlined"  size="medium" focused  color='primary' sx={{}}/>
                 <Typography  component='p' sx={{ml:'20px', fontSize:{xs:'20px', sm:'24px'}}}>м&sup2;</Typography>
+            </Box>
+            <Box component='div' sx={{display:'flex', alignItems:'center'}}>
+                <Button variant="text" startIcon={<EastIcon sx={{
+                    transform: 'rotate(180deg)',
+                   
+                }}/>} sx={{
+                    fontSize:{xs:'15px', sm:'20px'},
+                    py:4,
+                   
+                }}>
+                    Назад
+                </Button>
+                <Button variant="outlined" sx={{
+                    fontSize:{xs:'15px', sm:'20px'},
+                   px:3
+                }}>Далі</Button>
             </Box>
            
         </Box>
