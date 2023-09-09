@@ -1,20 +1,23 @@
 import React from 'react';
 import {Avatar, Box} from "@mui/material";
 import {Link} from 'react-router-dom'
-function LogoFooter() {
+import PropTypes from 'prop-types'
+function LogoLink({mobile}) {
     return (
 
            <Box component='div' sx={{height: '100%',}} >
                <Link to='/'>
                    <Avatar
                        alt="Logo"
-                       src="image/logo_footer.svg"
+                       src={mobile ? "image/remontprofi_logo_01.svg":"image/logo_footer.svg" }
                        variant="square"
-                       sx={{ width:"256px", height: "145px" }}
+                       sx={mobile?{width:"190px", height: "106px" }:{ width:"256px", height: "145px" }}
                    />
                </Link>
                </Box>
     );
 }
-
-export default LogoFooter;
+LogoLink.propTypes = {
+    mobile: PropTypes.bool.isRequired,
+};
+export default LogoLink;
