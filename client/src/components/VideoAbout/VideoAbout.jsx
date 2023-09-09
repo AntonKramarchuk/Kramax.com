@@ -45,8 +45,7 @@ function VideoAbout() {
                             тому ми можемо гарантувати: відмінний результат збережеться надовго.
                         </Typography>
                         <Link to='/privacy'>
-                            <Box component='div' sx={{
-                                
+                            <Box component='button' sx={{
                                 margin: {xs: '40px auto', lg: '40px 0'},
                                 height: '66px',
                                 width: '192px',
@@ -55,6 +54,8 @@ function VideoAbout() {
                                 alignItems: 'center',
                                 position: 'relative',
                                 border: '2px solid #dfb48b',
+                                background:'white',
+                                cursor: 'pointer'
                             }}><Typography component='span' color='#dfb48b' sx={{
                                 fontSize: '15px',
                                 fontWeight: '700',
@@ -103,7 +104,7 @@ function VideoAbout() {
                                 src="/image/video_about/video-about.jpg"
                                 variant="square"
                                 sx={{width:{xs:"100%"}, height:{xs:"100%",lg:"293px"}, filter: ' brightness(50%)'}}
-                            ></Avatar>
+                            />
                             
                             
                             <Box component='span' sx={{
