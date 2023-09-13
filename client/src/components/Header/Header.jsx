@@ -92,12 +92,9 @@ const Header = () => {
                             backgroundColor: "white",
                             
                         }}>
-                        <IconButton
-                            size="large"
-                            onClick={mobileFilterToggle}
-                            color="black" sx={{width:{xs:'95%', sm:'100%'}, display:'flex', justifyContent:'flex-end',}} >
-                            <CloseIcon />
-                        </IconButton>
+                        <Box  sx={{width:{xs:'95%', sm:'100%'}, display:'flex', justifyContent:'flex-end',}}>
+                            <CloseIcon onClick={mobileFilterToggle} sx={{cursor:'pointer'}}  />
+                        </Box>
                         <LogoLink mobile/>
                     </Box>
                 </Drawer>
