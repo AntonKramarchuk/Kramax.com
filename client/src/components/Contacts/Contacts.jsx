@@ -7,6 +7,7 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import {format} from 'date-fns'
 import {Link as RouterLink} from 'react-router-dom'
 import {styled} from '@mui/material/styles';
+import PropTypes from 'prop-types'
 
 const StyledTypography = styled(Typography)(({theme}) => ({
     color: '#C7D9E6',
@@ -24,7 +25,7 @@ const HoverStyledTypography = styled(StyledTypography)(() => ({
     },
 }));
 
-function ContactsFooter() {
+function Contacts({mobile}) {
     const isDesktop = useMediaQuery((theme) => theme.breakpoints.up('md'));
     return (
         <Box component='div'
@@ -36,7 +37,7 @@ function ContactsFooter() {
                 lineHeight: "24px",
                 "&:hover": {textDecoration: 'underline'}
             }}>
-                <MaterialUILink href="tel:+38 (066) 000 00 00" underline="none" color="inherit">+38 (066) 000 00
+                <MaterialUILink href="tel:+38 (066) 000 00 00" underline="none" color={mobile ? 'black' :"inherit" }>+38 (066) 000 00
                     00</MaterialUILink>
             </Typography>
             <Typography variant="body1" component='span' m={1} sx={{
@@ -49,8 +50,8 @@ function ContactsFooter() {
             }}><MaterialUILink href="mailto:someNew@gmail.com" underline="none"
                                color="inherit">someNew@gmail.com</MaterialUILink>
             </Typography>
-            <List sx={{width: '100%', padding: '40px 0 50px 0'}}>
-                <ListItemIcon sx={{color: '#b9a897', display: 'flex', justifyContent: 'space-between'}}>
+            <List sx={mobile ? {width: '100%',padding: '20px 0'}:{width: '100%', padding:'40px 0 50px 0'}}>
+                <ListItemIcon sx={{color: '#b9a897', display: 'flex', justifyContent: 'space-evenly'}}>
                     <MaterialUILink href='https://facebook.com/' color="inherit" target="_blank"
                                     rel="noopener noreferrer"><FacebookOutlinedIcon/></MaterialUILink>
                     <MaterialUILink href='https://www.twitter.com/' color="inherit" target="_blank"
@@ -73,22 +74,26 @@ function ContactsFooter() {
                     md: 'flex-start'
                 }
             }}>
-                <StyledTypography component='p'>
-                    © RemontProfi – будівельно-ремонтна {isDesktop && <br/>}компанія у Києві, 2008
-                    - {format(new Date(), 'yyyy')}
-                </StyledTypography>
-                <HoverStyledTypography component='p'>
-                    <MaterialUILink href='#' color="inherit" underline="none" target="_blank" rel="noopener noreferrer">Розробка
-                        та маркетинг- WE</MaterialUILink>
-                </HoverStyledTypography>
-                <HoverStyledTypography component='p'>
-                    <MaterialUILink component={RouterLink} target="_blank" to='privacy' underline="none"
-                                    color="inherit">Політика конфіденційності </MaterialUILink>
-                </HoverStyledTypography>
+                {mobile ? null : <Box>
+                    <StyledTypography component='p'>
+                        © RemontProfi – будівельно-ремонтна {isDesktop && <br/>}компанія у Києві, 2008
+                        - {format(new Date(), 'yyyy')}
+                    </StyledTypography>
+                    <HoverStyledTypography component='p'>
+                        <MaterialUILink href='#' color="inherit" underline="none" target="_blank" rel="noopener noreferrer">Розробка
+                            та маркетинг- WE</MaterialUILink>
+                    </HoverStyledTypography>
+                    <HoverStyledTypography component='p'>
+                        <MaterialUILink component={RouterLink} target="_blank" to='privacy' underline="none"
+                                        color="inherit">Політика конфіденційності </MaterialUILink>
+                    </HoverStyledTypography>
+                </Box> }
             </Box>
         </Box>
 
     );
 }
-
-export default ContactsFooter;
+Contacts.propTypes = {
+    mobile: PropTypes.bool.isRequired,
+};
+export default Contacts;

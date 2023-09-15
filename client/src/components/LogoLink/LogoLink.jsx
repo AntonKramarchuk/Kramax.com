@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 function LogoLink({mobile}) {
     return (
 
-           <Box component='div' sx={{height: '100%',}} >
+           <Box component='div' sx={{}} >
                <Link to='/'>
                    <Avatar
                        alt="Logo"

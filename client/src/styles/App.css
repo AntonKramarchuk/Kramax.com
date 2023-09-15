@@ -8,10 +8,9 @@
 .active::after {
     content: '';
     display: block;
-    border-bottom: 3px solid #DFB48B;
-    width: 20px;
+    border-bottom: 2px solid #DFB48B;
+    width: 100%;
     padding-top: 4px;
     cursor: default;
-    border-radius: 5px;
 
 }

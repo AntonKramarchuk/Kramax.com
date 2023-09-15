@@ -8,6 +8,7 @@ import Drawer from "@mui/material/Drawer";
 import {styled} from '@mui/material/styles';
 import HeaderNav from "./HeaderNav";
 import LogoLink from "../LogoLink/LogoLink";
+import Contacts from "../Contacts/Contacts";
 
 const HeaderBar = styled(AppBar)({
     boxShadow: 'none',
@@ -96,6 +97,12 @@ const Header = () => {
                             <CloseIcon onClick={mobileFilterToggle} sx={{cursor:'pointer'}}  />
                         </Box>
                         <LogoLink mobile/>
+                        <HeaderNav mobile/>
+                        <Box sx={{margin: '10px 0', display:'flex',justifyContent:'center',width:'100%' }}>
+                            <HeaderButton>Замовити послугу</HeaderButton>
+                        </Box>
+                       
+                        <Contacts mobile/>
                     </Box>
                 </Drawer>
                 

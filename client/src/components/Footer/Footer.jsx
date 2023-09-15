@@ -2,7 +2,7 @@ import React from 'react';
 import {Box, Container} from "@mui/material";
 import LogoLink from "../LogoLink/LogoLink";
 import NavBarFooter from "./NavBarFooter/NavBarFooter";
-import ContactsFooter from "./ContactsFooter/ContactsFooter";
+import Contacts from "../Contacts/Contacts";
 
 function Footer() {
     return (
@@ -13,11 +13,11 @@ function Footer() {
                 <Container maxWidth="lg">
                   <Box component="div" sx={{height:'100%',display: 'flex', alignItems:'center',justifyContent: {xs:'center',md:'space-between'}, padding:'50px 0'}}>
                       <Box component="div" sx={{ display:{xs:'none',md:'flex'}, flexDirection: 'column'}}>
-                          <LogoLink/>
+                          <LogoLink mobile={false}/>
                           <NavBarFooter/>
                       </Box>
                       <Box component="div" >
-                          <ContactsFooter/>
+                          <Contacts mobile={false}/>
                       </Box>
 
                   </Box>
