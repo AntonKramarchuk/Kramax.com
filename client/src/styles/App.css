@@ -1,19 +1,16 @@
-/* ----------------------colors-------------- */
-:root {
-    --black: #000000;
-    --white: #ffffff;
-    --red: #ff0000;
-}
 
-/* ------------------fonts---------- */
-:root {
-    --robotoBold: "RobotoBold", sans-serif;
-    --robotoRegular: "RobotoRegular", sans-serif;
-    --robotoMedium: "RobotoMedium", sans-serif;
-    --robotoLight: "RobotoLight", sans-serif;
-}
+
 
 .App {
 
 }
 
+.active::after {
+    content: '';
+    display: block;
+    border-bottom: 2px solid #DFB48B;
+    width: 100%;
+    padding-top: 4px;
+    cursor: default;
+
+}
