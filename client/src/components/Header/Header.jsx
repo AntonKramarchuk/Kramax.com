@@ -46,11 +46,11 @@ const Header = () => {
                         justifyContent:{xs:'space-between'}
                     }}>
                         <Box sx={{ display: { xs: 'none', md: 'flex' },width:{md:'70%', lg:'80%'}}}>
-                          <HeaderNav/>
+                          <HeaderNav mobile={false}/>
                         </Box>
                         <Box sx={{  display: { xs: 'flex', md: 'none' }}}>
-                            <IconButton  size="large" color="secondary">
-                                <MenuIcon onClick={mobileFilterToggle}/>
+                            <IconButton  size="large" color="secondary" onClick={mobileFilterToggle}>
+                                <MenuIcon/>
                             </IconButton>
                             <IconButton  size="large" color="secondary"  component="a"  href="tel:+38 (066) 000 00 00" sx={{ display: { xs: 'flex', sm: 'none' }}}>
                                 <PhoneIcon/>
