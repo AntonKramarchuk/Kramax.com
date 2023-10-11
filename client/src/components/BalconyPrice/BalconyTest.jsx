@@ -43,7 +43,7 @@ const BalconyTest = () => {
                 площу балкона у квадратних метрах
             </Typography>
             <Box component="form" sx={{display: 'flex', alignItems: 'center', '& > :not(style)': {mt: 2, mb: 3},}}>
-                <TextField variant="outlined" size="medium" focused  />
+                <TextField type="number"  size="medium" focused/>
                 <Typography component='p' sx={{ml: '20px', fontSize: {xs: '20px', sm: '24px'}}}>м&sup2;</Typography>
             </Box>
             <Stack direction="row" spacing={2} sx={{pt: 6, mx: 'auto'}}>
