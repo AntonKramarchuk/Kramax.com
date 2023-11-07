@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Box, Typography, FormControl, InputLabel, Select, MenuItem, TextField} from "@mui/material";
+import {Box, Typography, FormControl, InputLabel, Select, MenuItem, TextField, Button} from "@mui/material";
 
 // import {styled} from '@mui/material/styles';
 //
@@ -30,7 +30,7 @@ const CostCalculation = () => {
     const [categoryOfHousing, setCategoryOfHousing] = useState('');
     const [typeOfHousing, setTypeOfHousing] = useState('');
     const [repair, setRepair] = useState('')
-    const [area, setArea] = useState(0)
+    const [area, setArea] = useState('')
     
     const [openCategory, setOpenCategory] = useState(false);
     const [openType, setOpenType] = useState(false);
@@ -69,8 +69,8 @@ const CostCalculation = () => {
         setOpenRepair(true)
     }
     return (
-        <Box>
-            <Box sx={{background: `url(${"/image/cost-calculation/bg_calc.jpg"})`}}>
+        <Box sx={{width:'100%', mb:{xs:'20px', lg:'15%'}, position:'relative'}}>
+            <Box sx={{background: `url(${"/image/cost-calculation/bg_calc.jpg"})`, }}>
                 <Box sx={{padding: {xs: '40px 20px', md: '130px 150px'}, textAlign: 'center'}}>
                     <Typography color='#fff' sx={{
                         fontSize: {xs: '26px', sm: '40px', md: '60px'},
@@ -85,7 +85,7 @@ const CostCalculation = () => {
                         викличте інженера для вимірювання.
                     </Typography>
                     <Box sx={{display: 'flex', justifyContent:'center', flexWrap: 'wrap'}}>
-                        <FormControl sx={{minWidth: 260, mr: 2,}}>
+                        <FormControl sx={{minWidth: 260, mr: 2,mt:'7px',}}>
                             <InputLabel id="demo-controlled-open-select-label">Тип житла</InputLabel>
                             <Select
                                 labelId="demo-controlled-open-select-label"
@@ -105,7 +105,7 @@ const CostCalculation = () => {
                                 ))}
                             </Select>
                         </FormControl>
-                        <FormControl sx={{minWidth: 260, mr: 2,}}>
+                        <FormControl sx={{minWidth: 260, mr: 2,mt:'7px',}}>
                             <InputLabel id="demo-controlled-open-select-label">Вид житла</InputLabel>
                             <Select
                                 labelId="demo-controlled-open-select-label"
@@ -125,7 +125,7 @@ const CostCalculation = () => {
                                 ))}
                             </Select>
                         </FormControl>
-                        <FormControl sx={{minWidth: 260, mr: 2,}}>
+                        <FormControl sx={{minWidth: 260, mr: 2,mt:'7px',}}>
                             <InputLabel id="demo-controlled-open-select-label">Вид ремонту</InputLabel>
                             <Select
                                 labelId="demo-controlled-open-select-label"
@@ -146,21 +146,44 @@ const CostCalculation = () => {
                             </Select>
                         </FormControl>
                         
-                        <TextField sx={{minWidth: 260, mr: 2, borderRadius: 0}} type="number"
-                                 helperText="Будь ласка, введіть площу"
+                        <TextField sx={{minWidth: 260, mr: 2, borderRadius: 0, mt:'7px',}}
+                                   type="number"
+                                   label='Будь ласка, введіть площу'
                                    id="demo-helper-text-misaligned"
                                    value={area}
                                    onChange={(event) => {
                                        setArea(event.target.value);
                                    }}
                         />
-                    
+                    <Button variant="contained" sx={{
+                        mt:{xs:'15px', sm:'5px', md:'60px', lg:'5px'},
+                        color:'#2D404C',
+                        borderRadius: 0,
+                        lineHeight: 1.5,
+                        backgroundColor: '#DDB38B',
+                        fontWeight:'600',
+                        p:'22px',
+                        height:'55px',
+                        '&:hover': {
+                            backgroundColor: '#c8dbe7',
+                            boxShadow: 'none',
+                        },
+                    }}>Розрахувати</Button>
                     </Box>
-                
                 </Box>
             </Box>
             <Box>
+            <Box sx={{
+                background:'#C8DBE7',
+                height:'500px',
+                width:{xs:'100%',lg:'80%'},
+                m:'0 auto',
+                // position:{xs:'none', lg:'absolute'},
+                // bottom:'-70%',
+                // left:'10%'
+            }}>
             
+            </Box>
             </Box>
         
         </Box>
